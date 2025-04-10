@@ -196,7 +196,7 @@ open class RSIShareViewController: SLComposeServiceViewController {
         let url = URL(string: "\(kSchemePrefix)-\(hostAppBundleIdentifier):share")
         var responder = self as UIResponder?
         
-        if true {
+        if #available(iOS 18.0, *) {
             while responder != nil {
                 if let application = responder as? UIApplication {
                     application.open(url!, options: [:], completionHandler: nil)
